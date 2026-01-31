@@ -1,15 +1,18 @@
-import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import TestAPI from "./components/TestAPI";
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Items } from "./Items"; // Make sure this path matches where you saved Items.js
+import { ItemDetail } from "./ItemDetail"; // Make sure this path matches where you saved ItemDetail.js
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <Routes>
-      <Route path="/test_api" element={<TestAPI />} />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        {/* This tells React to show the Items component on the home page */}
+        <Route path="/" element={<Items />} />
+
+        {/* This handles the "Edit" link for specific items */}
+        <Route path="/items/:id" element={<ItemDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

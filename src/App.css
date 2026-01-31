@@ -1,42 +1,215 @@
-#root {
-  max-width: 1280px;
+/* src/App.css - Professional Clean UI */
+
+:root {
+  --primary-color: #0d6efd; /* Bootstrap Blue */
+  --danger-color: #dc3545; /* Bootstrap Red */
+  --success-color: #198754; /* Bootstrap Green */
+  --bg-color: #f8f9fa; /* Light Grey Background */
+  --text-color: #212529; /* Dark Text */
+  --border-color: #dee2e6; /* Light Border */
+}
+
+body {
+  margin: 0;
+  padding: 40px 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+}
+
+/* Main Container Card */
+.container {
+  background-color: white;
+  width: 900px; /* Fixed width for standard look */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 24px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h3 {
+  margin-top: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* TABLE STYLING */
+.item-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-.card {
-  padding: 2em;
+.item-table th {
+  text-align: left;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid var(--border-color);
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
 }
 
-.read-the-docs {
-  color: #888;
+.item-table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+/* INPUTS & SELECTS */
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box; /* Fixes width issues */
+  background-color: white !important;
+  color: #333 !important;
+  transition: border-color 0.15s;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+/* BUTTONS */
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.btn-edit {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 13px;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.btn-delete {
+  background-color: var(--danger-color);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.btn-add {
+  background-color: var(--success-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  width: 100%; /* Fills the cell */
+}
+
+/* STATUS BADGE */
+.status-active {
+  color: var(--success-color);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  background-color: #d1e7dd;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.pagination button {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  color: var(--primary-color);
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.pagination button:disabled {
+  color: #6c757d;
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+/* EDIT FORM LAYOUT (Centered Card) */
+.edit-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 80vh;
+}
+
+.edit-card {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 450px; /* Limits width so it looks natural */
+}
+
+.edit-card label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+  margin-top: 15px;
+}
+
+.button-group {
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-save {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  flex: 1; /* Makes buttons equal width */
+  font-weight: 600;
+}
+
+.btn-cancel {
+  background-color: white;
+  border: 1px solid #ced4da;
+  color: #555;
+  padding: 10px 20px;
+  border-radius: 4px;
+  flex: 1;
 }
